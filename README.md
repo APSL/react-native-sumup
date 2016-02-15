@@ -48,7 +48,7 @@ This library is still a work in progress, only three methods have been implement
 ### ``Request`` param
 
 | Param |  Type | Description |
-|-------|-------|
+|-------|-------|-------------|
 | ``totalAmount`` | ``string`` | Will be parsed as ``decimalNumber``. |
 | ``title`` | ``string`` | |
 | ``currencyCode`` | ``string`` | |
