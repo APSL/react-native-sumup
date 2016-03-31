@@ -10,7 +10,7 @@ A React Native implementation of SumupSDK.
 
 First install the iOS Sumup SDK, [instructions here](https://github.com/sumup/sumup-ios-sdk#preparing-your-xcode-project).
 
-Then, add ``RNSumup.h`` and ``RNSumup.m`` to your project and check that the ``*.m`` file is under **Compile Sources**.
+Then, ``npm install react-native-sumup --save`` and add ``RNSumup.h`` and ``RNSumup.m`` to your project. Check that the ``*.m`` file is under **Compile Sources**.
 
 ## Example usage
 ```javascript
@@ -60,4 +60,4 @@ MIT.
 
 ## Development sponsor
 
-This development has been sponsored by Suppad.
+This development has been sponsored by [SupSpot](http://supspot.ch).

@@ -3,13 +3,16 @@ const SumupSDK = NativeModules.RNSumup
 
 var Sumup = {
   setupWithAPIKey(apiKey) {
-    SumupSDK.setupWithAPIKey(apiKey);
+    return SumupSDK.setupWithAPIKey(apiKey);
   },
-  presentLoginFromViewController(completionBlock) {
-    SumupSDK.presentLoginFromViewController(completionBlock);
+  presentLoginFromViewController() {
+    return SumupSDK.presentLoginFromViewController();
   },
-  checkoutWithRequest(request, completionBlock, errorBlock) {
-    SumupSDK.checkoutWithRequest(request, completionBlock, errorBlock);
+  checkoutWithRequest(request) {
+    return SumupSDK.checkoutWithRequest(request);
+  },
+  isLoggedIn() {
+    return SumupSDK.isLoggedIn().then(result => result.isLoggedIn)
   },
   paymentOptionAny: SumupSDK.SMPPaymentOptionAny,
   paymentOptionCardReader: SumupSDK.SMPPaymentOptionCardReader,
