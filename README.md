@@ -12,15 +12,24 @@ First install the iOS Sumup SDK, [instructions here](https://github.com/sumup/su
 
 Then, ``npm install react-native-sumup --save`` and add ``RNSumup.h`` and ``RNSumup.m`` to your project. Check that the ``*.m`` file is under **Compile Sources**.
 
+## Compatibility
+
+This library has been tested with Sumup iOS SDK version **1.2.2**.
+
 ## Example usage
 ```javascript
 import Sumup from 'react-native-sumup'
 // Setup Sumup
 Sumup.setupWithAPIKey('API_KEY')
 // Open login
-Sumup.presentLoginFromViewController((response) => {
-  console.log('Response', response)
-})
+Sumup.presentLoginFromViewController()
+  .then(response => {
+    console.log('Response', response)
+  })
+  .catch(error => {
+    console.log('error', error)
+  })
+
 // Checkout
 let request = {
   totalAmount: '20.0',
@@ -28,22 +37,25 @@ let request = {
   currencyCode: 'EUR',
   paymentOption: Sumup.paymentOptionMobilePayment
 }
-Sumup.checkoutWithRequest(request, (response) => {
-  console.log('Response', response)
-}, (error) => {
-  console.log('Error', error)
-})
+Sumup.checkoutWithRequest(request)
+  .then(response) => {
+    console.log('Response', response)
+  })
+  .catch(error) => {
+    console.log('Error', error)
+  })
 ```
 
 ## API 🚧
 
-This library is still a work in progress, only three methods have been implemented. Please feel free to open any issues if you need another SDK method implemented.
+This library is still a work in progress, only some methods have been implemented. Please feel free to open any issues if you need another SDK method implemented.
 
 | Method | Params | Description |
 |--------|--------|-------------|
 | ``setupWithAPIKey `` | ``apiKey``: String | Method to initialize SumupSDK. |
 | ``presentLoginFromViewController`` | ``completionBlock``: function | Opens a Sumup login view. |
 | ``checkoutWithRequest`` | ``request``: Object, ``completionBlock(response)``: function, ``errorBlock(error)``: function | Creates a Sumup payment request. |
+| `isLoggedIn` | | Returns `true` if the user has logged-in into the SDK. |
 
 ### ``Request`` param
 
