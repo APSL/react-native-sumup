@@ -6,8 +6,8 @@
 //  Copyright © 2016 APSL. All rights reserved.
 //
 
-#import "RCTBridgeModule.h"
-#import "RCTConvert.h"
+#import <React/RCTBridgeModule.h>
+#import <React/RCTConvert.h>
 #import <SumupSDK/SumupSDK.h>
 
 @interface RNSumup : NSObject <RCTBridgeModule>
